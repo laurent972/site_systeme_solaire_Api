@@ -1,0 +1,62 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
+  "plugins": ["@typescript-eslint", "react", "graphql", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": 2018, // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module", // Allows for the use of imports
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    // Override some TypeScript rules just for .js(x) files
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+      }
+    }
+  ],
+  "rules": {
+    // Disable prop-types as we use TypeScript for type checking
+    "react/prop-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-unused-vars": ["warn", {
+      "argsIgnorePattern": "^_"
+    }],
+    "import/no-named-as-default": "off",
+    "prettier/prettier": "warn",
+    "import/no-cycle": "warn",
+    "import/newline-after-import": ["warn", { "count": 1 }],
+    "import/order": [
+      "warn",
+      {
+        "newlines-between": "always",
+        "groups": [["builtin", "external", "internal"], "parent", ["sibling", "index"]]
+      }
+    ]
+  }
+}

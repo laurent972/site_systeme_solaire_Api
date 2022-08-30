@@ -1,0 +1,11 @@
+overwrite: true
+schema: https://graphql.contentful.com/content/v1/spaces/${REACT_APP_CONTENTFUL_SPACE_ID}?access_token=${REACT_APP_CONTENTFUL_TOKEN}
+generates:
+  src/generated/graphql-contentful.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+#      - "typescript-react-apollo"
+  ./graphql-contentful.schema.json:
+    plugins:
+      - "introspection"

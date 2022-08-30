@@ -1,0 +1,15 @@
+node_modules
+dist
+coverage
+.next
+.DS_Store
+.idea
+.project
+.vscode
+.jest
+out
+build
+
+# dotenv environment variables file
+.env
+node_modules

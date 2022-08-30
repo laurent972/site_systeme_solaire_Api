@@ -1,0 +1,5 @@
+export default {
+  CALLBACK_URL: String(process.env.REACT_APP_SOCIAL_CALLBACK_URL),
+  APPLE_CLIENT_ID: String(process.env.REACT_APP_SOCIAL_APPLE_CLIENT_ID),
+  GOOGLE_CLIENT_ID: String(process.env.REACT_APP_SOCIAL_GOOGLE_CLIENT_ID),
+}
