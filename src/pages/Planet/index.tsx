@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
+import { GetThePlanet } from '../../api/services';
+import PlanetDetails from '../../components/Planet';
 import {Body} from '../../types/planets';
 
 type PlanetParams = {
@@ -8,12 +10,18 @@ type PlanetParams = {
 
 const PlanetPage: React.FC = () => {
 
-    const [onePlanet,setOnePlanet] = useState<Body | null>(null);
     const {id} = useParams<PlanetParams>();
+    const [onePlanet,setOnePlanet] = useState<Body | null>(null);
 
+    useEffect(() => {
+        GetThePlanet(id).then(response =>{
+            setOnePlanet(response)
+        }); 
+      },[])
+    
     return(
 
-        <h1>TOTO</h1>
+        <PlanetDetails onePlanet={onePlanet} />
     )
 
   }
