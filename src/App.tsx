@@ -1,9 +1,10 @@
 import React, { FC } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
-import { Paper } from '@material-ui/core'
+import { Paper, Typography } from '@material-ui/core'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import { StylesProvider, ThemeProvider } from '@material-ui/core/styles'
+import { StylesProvider, ThemeProvider, useTheme } from '@material-ui/core/styles'
 import { ThemeProvider as StyledThemeProvider } from 'styled-components'
+import Header from '../src/components/Header'
 
 import getTheme from '../src/theme'
 
@@ -11,7 +12,8 @@ import RoutesComponents from './router/RoutesComponents'
 import { app } from './configuration'
 
 const App: FC = (props) => {
-  const { children } = props
+  const { children } = props;
+  const theme = useTheme();
 
   const gtmScript = app.GTM_ID && (
     <script>{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -40,12 +42,16 @@ const App: FC = (props) => {
     <React.Fragment>
       <HelmetProvider>
         <Helmet defaultTitle="boilerplate-react-js - App">{gtmScript}</Helmet>
+       
         <StylesProvider injectFirst>
           <StyledThemeProvider theme={getTheme()}>
             <ThemeProvider theme={getTheme()}>
+              <Header></Header>
+              
               <CssBaseline />
               <Paper elevation={0}>{children}</Paper>
               <RoutesComponents />
+              
             </ThemeProvider>
           </StyledThemeProvider>
         </StylesProvider>
