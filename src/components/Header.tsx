@@ -6,14 +6,13 @@ import { AppBar,Toolbar, IconButton } from '@material-ui/core';
 const Header = () => {
     
     return (
-        <div>
+        <>
              <AppBar position="static">
                 <Toolbar>
-                    
-                    <h1>Planetes</h1>
+                    <h1>Les planètes du système solaire</h1>
                 </Toolbar>
             </AppBar>
-        </div>
+        </>
     );
 };
 
