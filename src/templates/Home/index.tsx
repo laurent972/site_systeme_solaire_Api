@@ -86,20 +86,22 @@ const HomeTemplate: FC<HomeTemplateProps> = (props) => {
           </section>
          
          <main id="theContent">
+         <article role="planetInfos" aria-label="Article planet">
           <Container>
             <Grid container spacing={2}>
                 {planetsList?.map((planet:any) => (
                          <Grid item xs={12} sm={6} md={3} key={planet.id}>
-                          <article role="planetInfos" aria-label="Article planet">
+                          
                             {loadImg(planet.id)}
                             <Paper>
                               <PlanetCard planet={planet} img={img} id={planet.id}/>                          
                             </Paper>
-                          </article>
+                         
                       </Grid>
                   ))}
             </Grid>
           </Container>
+          </article>
           </main>
       </>
     
