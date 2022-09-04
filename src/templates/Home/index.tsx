@@ -1,5 +1,5 @@
-import {  AppBar, Box, Button, Container, Grid, Paper } from '@material-ui/core'
-import React, { FC,  useEffect, useState } from 'react'
+import {  Box, Button, Container, Grid, Paper } from '@material-ui/core'
+import React, { FC,  useContext,  useEffect, useState } from 'react'
 import PlanetCard from '../../components/PlanetCard'
 
 import {Body} from '../../types/planets'
@@ -28,12 +28,13 @@ const HomeTemplate: FC<HomeTemplateProps> = (props) => {
    }
    
    let img = "https://media.lesechos.com/api/v1/images/view/61fd23998fe56f101b3e4540/1280x720/070887130090-web-tete.jpg";
-
+ 
    const loadImg = (planetName:string) => {
     switch(planetName){
         case "uranus":
           img="https://images.unsplash.com/photo-1639874897442-8b6d5a181cf3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2030&q=80"
-        break
+          
+          break
         case "jupiter":
           img="https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/d/9/4/d944663dfe_50191912_jupiter-anneaux-stephen-kane-ucr.jpg"
         break
@@ -60,8 +61,9 @@ const HomeTemplate: FC<HomeTemplateProps> = (props) => {
         break
     }
   }
-  
 
+
+  
   return (
       <>
           <section id="searchEngine" role="searchEngine" style={{paddingTop:'20px', paddingBottom:'20px', textAlign:'center'}} aria-label="Search a planet">

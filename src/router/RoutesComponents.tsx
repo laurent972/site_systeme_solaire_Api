@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, RouteComponentProps, Switch, withRouter  } from 'react-router-dom'
+
 
 import Layout from '../layouts/Layout'
 import { RouteType } from '../types/routes'
@@ -47,10 +48,12 @@ const childRoutes = (Layout: React.ElementType, routes: Array<RouteType>) =>
     ) : null
   })
 
+
 const RoutesComponents = () => (
+  
   <Router>
     <Switch>
-      {childRoutes(Layout, publicLayoutRoutes)}
+        {childRoutes(Layout, publicLayoutRoutes)}
       </Switch>
   </Router>
 )

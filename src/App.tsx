@@ -1,11 +1,10 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { Paper, Typography } from '@material-ui/core'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { StylesProvider, ThemeProvider } from '@material-ui/core/styles'
 import { ThemeProvider as StyledThemeProvider } from 'styled-components'
 import Header from '../src/components/Header'
-
 import getTheme from '../src/theme'
 
 import RoutesComponents from './router/RoutesComponents'
@@ -49,8 +48,7 @@ const App: FC = (props) => {
               
               <CssBaseline />
               <Paper elevation={0}>{children}</Paper>
-              <RoutesComponents />
-              
+                <RoutesComponents />
             </ThemeProvider>
           </StyledThemeProvider>
         </StylesProvider>

@@ -12,9 +12,9 @@ const Header = () => {
              <AppBar position="static">
                 <Toolbar>
                     <BrowserRouter>
-                        <NavLink to='/'>
+                       
                             <h1>Les planètes du système solaire</h1>
-                        </NavLink>
+                        
                     </BrowserRouter>
                 </Toolbar>
             </AppBar>

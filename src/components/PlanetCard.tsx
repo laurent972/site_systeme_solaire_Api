@@ -58,7 +58,6 @@ const PlanetCard: React.FC<PlanetProps>= ({planet,img, id}) => {
                             <Button
                                 variant="contained"
                                 color="secondary"
-                               
                                 size="large"
                                 onClick={handleOnSubmit}
                                 >
