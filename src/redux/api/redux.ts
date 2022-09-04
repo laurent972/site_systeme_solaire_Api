@@ -20,7 +20,7 @@ const initialState: ApiState = {
       ? { authorization: `Basic ${configuration.api.BASIC_AUTH}` }
       : {}),
   },
-  refreshing: false,
+  refreshing: true,
 }
 
 //

@@ -8,7 +8,6 @@ export type HomeTemplateProps = {
   bodies?: Body[],
 }
 
-
 const HomeTemplate: FC<HomeTemplateProps> = (props) => {
   
     const [searchTerm, setSearchTerm] = React.useState(''); 
@@ -65,8 +64,6 @@ const HomeTemplate: FC<HomeTemplateProps> = (props) => {
 
   return (
       <>
-      
-
           <section id="searchEngine" role="searchEngine" style={{paddingTop:'20px', paddingBottom:'20px', textAlign:'center'}} aria-label="Search a planet">
             <Box component="span" m={1}>
             <input style={{padding:'10px'}} type="text" placeholder="Rechercher une planete" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value) } />
