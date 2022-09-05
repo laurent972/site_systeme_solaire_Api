@@ -86,7 +86,7 @@ const PlanetDetails: React.FC<PlanetDetailsProps> = ({onePlanet}) => {
                                 <ListItem dense>
                                     <ListItemText
                                     primary='Lunes'
-                                     secondary={onePlanet?.moons.map((moon=>moon.moon + '-'))}
+                                     secondary={onePlanet?.moons ? onePlanet?.moons.map((moon=>moon.moon + '-')) : 'Pas de lune trouvée'}
                                     />
                                 </ListItem>
                             </List>     

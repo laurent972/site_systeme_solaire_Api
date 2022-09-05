@@ -1,14 +1,105 @@
 
+let planetData = {
+  bodies: [
+  {
+  id: "lune",
+  name: "La Lune",
+  englishName: "Moon",
+  isPlanet: false,
+  moons: null,
+  semimajorAxis: 384400,
+  perihelion: 363300,
+  aphelion: 405500,
+  eccentricity: 0.0549,
+  inclination: 5.145,
+  mass: {
+  massValue: 7.346,
+  massExponent: 22
+  },
+  vol: {
+  volValue: 2.1968,
+  volExponent: 10
+  },
+  density: 3.344,
+  gravity: 1.62,
+  escape: 2380,
+  meanRadius: 1737,
+  equaRadius: 1738.1,
+  polarRadius: 1736,
+  flattening: 0.0012,
+  dimension: "",
+  sideralOrbit: 27.3217,
+  sideralRotation: 655.728,
+  aroundPlanet: {
+  planet: "terre",
+  rel: "https://api.le-systeme-solaire.net/rest/bodies/terre"
+  },
+  discoveredBy: "",
+  discoveryDate: "",
+  alternativeName: "",
+  axialTilt: 6.68,
+  avgTemp: 0,
+  mainAnomaly: 0,
+  argPeriapsis: 0,
+  longAscNode: 0,
+  bodyType: "Moon",
+  rel: "https://api.le-systeme-solaire.net/rest/bodies/lune"
+  }]
+};
+
 export async function GetApi() {
     let response = await fetch(`https://api.le-systeme-solaire.net/rest.php/bodies?filter%5B%5D=isPlanet%2Ceq%2Ctrue`)
       if (response.ok) {
         let result = await response.json();
         return result
       }
-    
+      throw new Error(`HTTP error! status: ${response.status}`);
 }
 
 
+let result = {
+    id: "nibiru",
+    name: "Nibiru",
+    englishName: "Planet X",
+    isPlanet: false,
+    moons: null,
+    semimajorAxis: 0,
+    perihelion: 0,
+    aphelion: 0,
+    eccentricity: 0,
+    inclination: 0,
+    mass: {
+    massValue: 0,
+    massExponent: 0
+    },
+    vol: {
+    volValue: 0,
+    volExponent: 0
+    },
+    density: 0,
+    gravity: 0,
+    escape: 0,
+    meanRadius: 0,
+    equaRadius: 0,
+    polarRadius: 0,
+    flattening: 0.00,
+    dimension: "Inconnue",
+    sideralOrbit: 0,
+    sideralRotation: 0,
+    aroundPlanet: {
+    planet: "?",
+    rel: "https://api.le-systeme-solaire.net/rest/bodies/terre"
+    },
+    discoveredBy: "Existence hypothétique",
+    discoveryDate: "",
+    alternativeName: "",
+    axialTilt: 6.68,
+    avgTemp: 0,
+    mainAnomaly: 0,
+    argPeriapsis: 0,
+    longAscNode: 0,
+    bodyType: "Hypothétique"
+    }
 
 export async function GetThePlanet(id) {
     let response = await fetch(`https://api.le-systeme-solaire.net/rest/bodies/${id}`)
@@ -16,11 +107,12 @@ export async function GetThePlanet(id) {
         let result = await response.json();
         return result
       }
+    return result
 }
 
 export let img =''
 export function loadImg (planetName){
-  console.log(planetName);
+ 
   switch(planetName){
       case "uranus":
         img="https://images.unsplash.com/photo-1639874897442-8b6d5a181cf3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2030&q=80"
@@ -51,7 +143,7 @@ export function loadImg (planetName){
       break
     
   }
-  console.log(img);
+  
 }   
 
 

@@ -13,7 +13,7 @@ const DashboardPage: React.FC<RouteComponentProps> = () => {
   
   useEffect(() => {
     GetApi().then(response =>{
-      setTemplateProps(response)
+      setTemplateProps(response)      
     }); 
   },[])
 
