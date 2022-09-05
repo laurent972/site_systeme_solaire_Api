@@ -29,7 +29,7 @@ const HomeTemplate: FC<HomeTemplateProps> = (props) => {
   
   return (
       <>
-          <section id="searchEngine" role="searchEngine" style={{paddingTop:'20px', paddingBottom:'20px', textAlign:'center'}} aria-label="Search a planet">
+          <section id="searchEngine" role="search" style={{paddingTop:'20px', paddingBottom:'20px', textAlign:'center'}} aria-label="Search a planet">
             <Box component="span" m={1}>
             <input style={{padding:'10px'}} type="text" placeholder="Rechercher une planete" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value) } />
             <Button
@@ -49,7 +49,7 @@ const HomeTemplate: FC<HomeTemplateProps> = (props) => {
           </section>
          
          <main id="theContent">
-         <article role="planetInfos" aria-label="Article planet">
+         <article>
           <Container>
             <Grid container spacing={2}>
                 {planetsList?.map((planet:any) => (

@@ -1,7 +1,8 @@
 {
   "name": "boilerplate-react-js",
+  "homepage": "https://laurent972.github.io/systeme_solaire/",
   "version": "0.0.1",
-  "description": "boilerplate-react-js - App",
+  "description": "Les planètes du systeme solaire",
   "author": "BBS",
   "private": true,
   "scripts": {
@@ -14,7 +15,9 @@
     "generate:contentful": "graphql-codegen -r dotenv/config -c codegen-contentful.yml",
     "storybook": "start-storybook -p 6006 -s public",
     "storybook:build": "NODE_ENV=test build-storybook --config-dir .storybook --output-dir storybook_public/ --static-dir ./public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": [
     "> 0.25%",
@@ -139,6 +142,7 @@
     "eslint-config-prettier": "6.15.0",
     "eslint-plugin-graphql": "^4.0.0",
     "eslint-plugin-prettier": "3.3.1",
+    "gh-pages": "^4.0.0",
     "lint-staged": "^11.0.0",
     "prop-types": "15.7.2",
     "svg-sprite-loader": "^6.0.9",
