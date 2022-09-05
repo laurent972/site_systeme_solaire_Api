@@ -14,14 +14,13 @@ const PlanetPage: React.FC = () => {
     
     const {id} = useParams<PlanetParams>();
     const [onePlanet,setOnePlanet] = useState<Body | null>(null);
-   
-    
-    
+
     useEffect(() => {
         GetThePlanet(id).then(response =>{
             setOnePlanet(response)
         }); 
       },[])
+      
     
     return(
       <>
